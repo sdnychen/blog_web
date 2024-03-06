@@ -4,9 +4,9 @@
 
 <template>
   <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <HeaderMain />
+    <slot />
+    <FooterMain />
   </div>
 </template>
 
