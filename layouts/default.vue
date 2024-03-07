@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
+  <div class="main">
     <HeaderMain />
     <slot />
     <FooterMain />
@@ -11,5 +11,8 @@
 </template>
 
 <style lang="scss">
-
+  .main {
+    margin: 0 auto;
+    width: $content-width;
+  }
 </style>
