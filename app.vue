@@ -5,6 +5,7 @@
 <template>
   <div>
     <NuxtLayout>
+      <NuxtLoadingIndicator color="#aaa" :throttle="0" />
       <NuxtPage />
     </NuxtLayout>
   </div>
