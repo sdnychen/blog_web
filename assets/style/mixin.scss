@@ -1,0 +1,17 @@
+// 统一阴影样式
+@mixin shadowImg {
+  box-shadow: 0 0 16px 0 getColor(img-shadow-color);
+}
+
+@mixin shadowMenu {
+  box-shadow: 0 0 12px 0 getColor(menu-shadow-color);
+}
+
+// 多行省略(行数)
+@mixin multi-line-elliptical($line) {
+  overflow:hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}

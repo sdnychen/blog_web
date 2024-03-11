@@ -1,15 +1,7 @@
 <script lang="ts" setup>
-// 轮播图组件数据类型
-interface carouselType {
-  uid: string,
-  title: string,
-  src: string,
-  url: string,
-  alt: string,
-  type: number
-}
 
-const carouselList: carouselType[] = reactive([
+// 轮播图数据
+const carouselList: CarouselType[] = reactive([
   {
     uid: "1",
     title: "",
@@ -35,6 +27,39 @@ const carouselList: carouselType[] = reactive([
     type: 1
   }
 ])
+
+const postDataList: PostType[] = reactive([
+  {
+    uid: "1",
+    title: "文章标题1",
+    img: "https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg",
+    alt: "一张图",
+    tag: "Vue, Java",
+    class: "笔记",
+    abstract: "文章摘要文章摘要文章摘要文章摘要文章摘要文章摘要文章摘要文章摘要",
+    author: "SDNYCHEN",
+    type: 1,
+    status: 1,
+    created: "2024/03/10",
+    update: "2024/03/10",
+    remark: ""
+  },
+  {
+    uid: "2",
+    title: "基于Python的Nginx的日志管理分析系统的设计与实现",
+    img: "https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg",
+    alt: "一张图",
+    tag: "Vue, Java",
+    class: "笔记",
+    abstract: "文章摘要文章摘要文章摘要文章摘要文章摘要文章摘要文章摘要文章摘要",
+    author: "SDNYCHEN",
+    type: 1,
+    status: 1,
+    created: "2024/03/10",
+    update: "2024/03/10",
+    remark: ""
+  }
+])
 </script>
 
 <template>
@@ -44,12 +69,12 @@ const carouselList: carouselType[] = reactive([
     </div>
     <div class="content">
       <main class="main">
-        <div class="title">
-          文章推荐
-        </div>
+        <CCards :data="postDataList" />
       </main>
       <aside class="aside">
-        aside
+        <div class="about">
+          <CAside />
+        </div>
       </aside>
     </div>
   </div>
@@ -59,15 +84,14 @@ const carouselList: carouselType[] = reactive([
 .content {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  gap: 30px;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 .main {
   flex: 1;
-  background-color: rgb(98, 154, 202);
 }
 .aside {
   width: 300px;
-  background-color: rgb(35, 233, 190);
 }
 </style>

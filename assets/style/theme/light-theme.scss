@@ -1,10 +1,18 @@
 $light: (
-  main-color: #66CCCC,
-  main-text-color: #444,
-  main-gbc: #FFF,
+  main-color: #66CCCC, // 主色
+  main-text-color: #444, //主文字颜色
+  main-gbc: #FFF, // 主背景色
 
-  box-shadow-color: #d8d8d8,
+  minor-text-color: #8f8f8f, // 次要文字颜色
 
-  footer-bgc: #545454,
+  aside-bg-color: #eaffff, // aside背景颜色
+  aside-frame-color: #eaffff, // aside边框颜色
+
+
+
+  img-shadow-color: #00000054, // 图片阴影
+  menu-shadow-color: #0000001e, // 菜单阴影
+
+  footer-bgc: #545454, // footer背景色
   footer-bottom-text-color: #fff
 );

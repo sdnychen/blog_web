@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { ChevronBack, ChevronForward } from "@vicons/ionicons5"
+import type { PropType } from "vue"
 
 const props = defineProps({
   data: {
-    type: Array,
+    type: Object as PropType<CarouselType[]>,
     required: true
   },
   autoPlay: {
@@ -27,7 +28,7 @@ onMounted(() => {
   if (props.autoPlay) {
     timer = setInterval(() => {
       handleChangeArrow("next")
-    }, 3000)
+    }, props.interval)
   }
 })
 onUnmounted(() => {
@@ -48,7 +49,7 @@ const handleHeanMouseLeave = () => {
 }
 
 // 复制
-const dataList = reactive([...props.data])
+const dataList: CarouselType[] = reactive([...props.data])
 
 // 当前页数下标
 const currPageIndex = ref(0)
@@ -101,7 +102,7 @@ const handleChangeDot = (index: number) => {
     </div>
     <div v-if="showDots" class="dots">
       <div
-        v-for="(item, index) in dataList.length"
+        v-for="(item, index) in dataList"
         :key="item.uid"
         :class="['dot', currPageIndex === index ? 'dot-active' : '']"
         @click="handleChangeDot(index)"
@@ -115,7 +116,7 @@ const handleChangeDot = (index: number) => {
   position: relative;
   width: 100%;
   border-radius: 16px;
-  box-shadow: 0 0 10px 0 getColor(box-shadow-color);
+  @include shadowImg;
   overflow: hidden;
   z-index: 0;
   &:hover .arrows{

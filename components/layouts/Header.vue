@@ -90,7 +90,7 @@ const gotoPersion = async() => {
   // logo样式
   .logo {
     flex: 1;
-    font-size: 30px;
+    font-size: 3rem;
   }
 
   // 菜单样式
@@ -98,7 +98,7 @@ const gotoPersion = async() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px 0; // TODO: 不合理
+    padding: 2rem 0; // TODO: 不合理
 
     // 菜单活动样式
     .active,
@@ -110,20 +110,21 @@ const gotoPersion = async() => {
     .menu-item {
       cursor: pointer;
       position: relative;
-      font-size: 18px;
+      font-size: 1.8rem;
       &:hover > .submenu-box {
         display: block;
       }
-      .menu-link {
-        padding: 10px 16px;
-        display: flex;
-        align-items: center;
-        .n-icon {
-          font-size: 20px;
-        }
-        &:hover {
-          color: getColor(main-color);
-        }
+    }
+
+    .menu-link {
+      padding: 1rem 1.6rem;
+      display: flex;
+      align-items: center;
+      .n-icon {
+        font-size: 20px;
+      }
+      &:hover {
+        color: getColor(main-color);
       }
     }
 
@@ -132,9 +133,9 @@ const gotoPersion = async() => {
       position: absolute;
       top: 46px;
       left: -10px;
-      font-size: 16px;
+      font-size: 1.6rem;
       background-color: getColor(main-gbc);
-      box-shadow: 0 0 4px getColor(box-shadow-color);
+      @include shadowMenu;
       border-radius: 8px;
       padding: 18px;
       width: 180px;
@@ -158,9 +159,9 @@ const gotoPersion = async() => {
       align-items: center;
       justify-content: flex-end;
       gap: 10px;
+      font-size: 1.4rem;
       .avatar {
         border-radius: 50%;
-        background-color: rgb(94, 94, 94);
       }
     }
   }

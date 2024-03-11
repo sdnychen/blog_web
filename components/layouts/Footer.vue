@@ -54,6 +54,7 @@ const menu = reactive([
     width: $content-width;
     margin: 0 auto;
     color: getColor(footer-bottom-text-color);
+    font-size: 1.4rem;
     a {
       color: getColor(footer-bottom-text-color);
     }
@@ -65,7 +66,7 @@ const menu = reactive([
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 16px;
+      gap: 1.6rem;
     }
   }
 </style>
