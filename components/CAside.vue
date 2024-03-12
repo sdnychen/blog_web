@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { TimeOutline } from "@vicons/ionicons5"
+import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionicons5"
 
 </script>
 
@@ -88,15 +88,46 @@ import { TimeOutline } from "@vicons/ionicons5"
       <div class="content">
         <div class="comment">
           <div class="text">
-            这是一条很长很长的不正经的评论
+            这是一条很长很长很长很长很长很长很长很长很长很长很长很长很长很长的不正经的评论
           </div>
           <div class="info">
-            <div>
-              1
+            <div class="info-item">
+              <n-icon>
+                <HeartOutline />
+              </n-icon>
+              <span>0</span>
+            </div>
+            <div class="info-item">
+              <n-icon>
+                <ChatboxEllipsesOutline />
+              </n-icon>
+              <span>0</span>
+            </div>
+          </div>
+        </div>
+        <div class="comment">
+          <div class="text">
+            这是一条很长很长很长很长很长很长很长很长的不正经的评论
+          </div>
+          <div class="info">
+            <div class="info-item">
+              <n-icon>
+                <HeartOutline />
+              </n-icon>
+              <span>0</span>
+            </div>
+            <div class="info-item">
+              <n-icon>
+                <ChatboxEllipsesOutline />
+              </n-icon>
+              <span>0</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="ad">
+      <img class="ad-img" src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg" alt="11">
     </div>
   </div>
 </template>
@@ -180,6 +211,27 @@ import { TimeOutline } from "@vicons/ionicons5"
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.6rem;
+    margin-top: 6px;
+  }
+  .info-item {
+    display: flex;
+    align-items: center;
+  }
+  .n-icon {
+    margin-right: 4px;
+    font-size: 1.8rem;
+  }
+}
+.ad {
+  .ad-img {
+    width: 100%;
+    height: 160px;
   }
 }
 </style>
