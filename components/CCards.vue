@@ -52,7 +52,7 @@ defineProps({
               <n-icon>
                 <BookOutline />
               </n-icon>
-              <span>预计2分钟</span>
+              <span>预计阅读{{ 2 }}分钟</span>
             </div>
           </div>
         </div>

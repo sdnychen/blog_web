@@ -48,9 +48,9 @@ const gotoPersion = async() => {
 
 <template>
   <div class="header">
-    <h1 class="logo">
+    <div class="logo">
       logo
-    </h1>
+    </div>
     <div class="menu">
       <div v-for="menuItem in menu" :key="menuItem.uid" class="menu-item">
         <NuxtLink :to="menuItem.url" class="menu-link" active-class="active">

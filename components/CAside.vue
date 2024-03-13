@@ -140,8 +140,8 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
   & > div {
     padding: 20px;
     border-radius: 16px;
-    border: 1px solid getColor(main-color);
-    background-color: getColor(aside-bgc);
+    border: 1px solid getColor(aside-frame-color);
+    background-color: getColor(aside-bg-color);
   }
 }
 .title {

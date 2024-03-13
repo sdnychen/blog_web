@@ -1,32 +1,6 @@
 <script lang="ts" setup>
 
-// 轮播图数据
-const carouselList: CarouselType[] = reactive([
-  {
-    uid: "1",
-    title: "",
-    src: "https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg",
-    url: "/about",
-    alt: "1",
-    type: 1
-  },
-  {
-    uid: "1",
-    title: "",
-    src: "https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel2.jpeg",
-    url: "/",
-    alt: "1",
-    type: 1
-  },
-  {
-    uid: "1",
-    title: "",
-    src: "https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel3.jpeg",
-    url: "/",
-    alt: "1",
-    type: 1
-  }
-])
+const route = useRoute()
 
 const postDataList: PostType[] = reactive([
   {
@@ -64,8 +38,21 @@ const postDataList: PostType[] = reactive([
 
 <template>
   <div class="box">
-    <div class="banner">
-      <CjCarousel :data="carouselList" auto-play show-dots show-arrow />
+    <div class="tag-info">
+      <div class="info">
+        <h1 class="title">
+          {{ route.params.name }}
+        </h1>
+        <div class="num">
+          文章数量：{{ 9 }}
+        </div>
+        <div class="intro">
+          Linux是一款免费的操作系统，用户可以通过网络或其他途径免费获得，并可以任意修改其源代码。这是其他的操作系统所做不到的。
+        </div>
+      </div>
+      <div class="tag-img">
+        <img class="img" src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg" alt="tag的首图">
+      </div>
     </div>
     <div class="content">
       <main class="main">
@@ -81,6 +68,40 @@ const postDataList: PostType[] = reactive([
 </template>
 
 <style lang="scss" scoped>
+.tag-info {
+  display: flex;
+  margin: 0 auto;
+  width: 800px;
+  padding: 30px 50px;
+  border-radius: 16px;
+  background-color: getColor(tag-bg-color);
+  border: 1px solid getColor(tag-frame-color);
+}
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-right: 30px;
+  .title {
+    font-size: 3rem;
+  }
+  .num {
+    font-size: 1.8rem;
+    color: getColor(minor-text-color);
+  }
+  .intro {
+    font-size: 1.8rem;
+  }
+}
+.tag-img {
+  .img {
+    width: 300px;
+    height: 240px;
+    border-radius: 12px;
+  }
+}
+
 .content {
   display: flex;
   justify-content: center;
