@@ -1,6 +1,6 @@
 // 统一阴影样式
 @mixin shadowImg {
-  box-shadow: 0 0 16px 0 getColor(img-shadow-color);
+  box-shadow: 4px 4px 16px 0 getColor(img-shadow-color);
 }
 
 @mixin shadowMenu {

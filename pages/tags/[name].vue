@@ -56,13 +56,16 @@ const postDataList: PostType[] = reactive([
     </div>
     <div class="content">
       <main class="main">
-        <CCards :data="postDataList" />
+        <CHighCard :data="postDataList" />
+        <CHighCard :data="postDataList" />
+        <CHighCard :data="postDataList" />
+        <CHighCard :data="postDataList" />
       </main>
-      <aside class="aside">
+      <!-- <aside class="aside">
         <div class="about">
           <CAside />
         </div>
-      </aside>
+      </aside> -->
     </div>
   </div>
 </template>
@@ -111,6 +114,10 @@ const postDataList: PostType[] = reactive([
 }
 .main {
   flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  row-gap: 60px;
 }
 .aside {
   width: $aside-width;

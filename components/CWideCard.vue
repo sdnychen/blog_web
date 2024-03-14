@@ -12,67 +12,52 @@ defineProps({
 </script>
 
 <template>
-  <div class="list-box">
-    <div v-if="data.length > 0" class="cards">
-      <div v-for="item in data" :key="item.uid" class="card">
-        <div class="thumbnail">
-          <img class="img" :src="item.img" :alt="item.alt">
-        </div>
-        <div class="info">
-          <div class="title">{{ item.title }}</div>
-          <div class="basic-info">
-            <div class="auther">
-              <n-icon>
-                <PersonOutline />
-              </n-icon>
-              <span class="text">{{ "SDNYCHEN" }}</span>
-            </div>
-            <div class="date">
-              <n-icon>
-                <CalendarOutline />
-              </n-icon>
-              <span class="text">{{ "2024/03/11" }}</span>
-            </div>
-            <div class="tags">
-              <n-icon>
-                <PricetagsOutline />
-              </n-icon>
-              <div class="tag" style="background-color: antiquewhite;">Linux</div>
-              <div class="tag" style="background-color: rgb(111, 231, 121);">Java</div>
-            </div>
-          </div>
-          <div class="abstract">
-            这是一个很长很长的测试，摘要这是一个很长很长的测试摘要，这是一个很长很长的测试摘要这是一个很长很长...
-          </div>
-          <div class="read">
-            <div class="read-more">
-              Read More
-            </div>
-            <div class="read-time">
-              <n-icon>
-                <BookOutline />
-              </n-icon>
-              <span>预计阅读{{ 2 }}分钟</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="next-page">
-        <span>加载更多</span>
-      </div>
+  <div class="card">
+    <div class="thumbnail">
+      <img class="img" src="https://naive-ui.oss-cn-beijing.aliyuncs.com/carousel-img/carousel1.jpeg" alt="item.alt">
     </div>
-    <div v-else>
-      暂无数据
+    <div class="info">
+      <div class="title">{{ 'item.title' }}</div>
+      <div class="basic-info">
+        <div class="auther">
+          <n-icon>
+            <PersonOutline />
+          </n-icon>
+          <span class="text">{{ "SDNYCHEN" }}</span>
+        </div>
+        <div class="date">
+          <n-icon>
+            <CalendarOutline />
+          </n-icon>
+          <span class="text">{{ "2024/03/11" }}</span>
+        </div>
+        <div class="tags">
+          <n-icon>
+            <PricetagsOutline />
+          </n-icon>
+          <div class="tag" style="background-color: antiquewhite;">Linux</div>
+          <div class="tag" style="background-color: rgb(111, 231, 121);">Java</div>
+        </div>
+      </div>
+      <div class="abstract">
+        这是一个很长很长的测试，摘要这是一个很长很长的测试摘要，这是一个很长很长的测试摘要这是一个很长很长...
+      </div>
+      <div class="read">
+        <div class="read-more">
+          Read More
+        </div>
+        <div class="read-time">
+          <n-icon>
+            <BookOutline />
+          </n-icon>
+          <span>预计阅读{{ 2 }}分钟</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 .card {
   display: flex;
   // align-items: center;
@@ -91,6 +76,9 @@ defineProps({
 }
 .info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   margin-top: 20px;
   .title {
     font-size: 2.6rem;
@@ -102,7 +90,6 @@ defineProps({
     align-items: center;
     gap: 20px;
     font-size: 1.4rem;
-    margin: 1.6rem 0;
     & > div {
       display: flex;
       align-items: center;
@@ -129,7 +116,6 @@ defineProps({
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-top: 20px;
     .read-more {
       font-size: 1.8rem;
       cursor: pointer;

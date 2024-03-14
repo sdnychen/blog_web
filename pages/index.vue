@@ -65,11 +65,12 @@ const postDataList: PostType[] = reactive([
 <template>
   <div class="box">
     <div class="banner">
-      <CjCarousel :data="carouselList" auto-play show-dots show-arrow />
+      <CCarousel :data="carouselList" auto-play show-dots show-arrow />
     </div>
     <div class="content">
       <main class="main">
-        <CCards :data="postDataList" />
+        <CWideCard :data="postDataList" />
+        <CWideCard :data="postDataList" />
       </main>
       <aside class="aside">
         <div class="about">
@@ -90,6 +91,9 @@ const postDataList: PostType[] = reactive([
 }
 .main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .aside {
   width: $aside-width;

@@ -36,6 +36,9 @@ const article = "<p>aaa</p>"
       </div>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <article class="article" v-html="article" />
+      <div class="comment">
+        1
+      </div>
     </main>
     <aside class="aside">
       <div class="about">
