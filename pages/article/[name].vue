@@ -36,9 +36,11 @@ const article = "<p>aaa</p>"
       </div>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <article class="article" v-html="article" />
-      <div class="comment">
-        1
-      </div>
+      <ClientOnly fallback-tag="span" fallback="加载评论中...">
+        <div class="comment">
+          <CComment />
+        </div>
+      </ClientOnly>
     </main>
     <aside class="aside">
       <div class="about">
@@ -64,11 +66,12 @@ const article = "<p>aaa</p>"
       height: 400px;
       object-fit: cover;
       border-radius: 16px;
+      @include shadowImg;
     }
   }
   .title {
     text-align: center;
-    margin: 20px 0;
+    margin: 40px 0 30px;
   }
   .info {
     display: flex;

@@ -8,7 +8,7 @@
   }
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   @each $key, $val in $dark {
     --color-#{$key}: #{$val};
   }
