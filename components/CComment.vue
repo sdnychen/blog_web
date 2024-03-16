@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const showReplyInput = ref(true)
 
 </script>
 
@@ -19,27 +20,59 @@
       <div class="avatar">
         <img class="avatar-img" src="public/favicon.ico" alt="1">
       </div>
-      <div class="input">
-        <n-config-provider preflight-style-disabled>
-          <n-input
-            placeholder="自动调整尺寸"
-            type="textarea"
-            :autosize="{
-              minRows: 1,
-              maxRows: 5
-            }"
-          />
-        </n-config-provider>
+      <CTextarea placeholder="请输入评论" />
+    </div>
+    <div class="comment-list">
+      <div class="avatar">
+        <img class="avatar-img" src="public/favicon.ico" alt="1">
+      </div>
+      <div class="right">
+        <div class="title">
+          <span class="username">SDNYCHEN</span>
+        </div>
+        <div class="content">
+          {{ '评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容' }}
+        </div>
+        <div class="info">
+          <div class="time">2024-03-16 11:05</div>
+          <div class="reply">回复</div>
+        </div>
+        <div class="comment-list reply-list">
+          <div class="avatar">
+            <img class="avatar-img reply-avatar-img" src="public/favicon.ico" alt="1">
+          </div>
+          <div class="right">
+            <div class="title reply-title">
+              <span class="username">SDNYCHEN</span>
+            </div>
+            <div class="content">
+              {{ '评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容评论内容' }}
+            </div>
+            <div class="info">
+              <div class="time">2024-03-16 11:05</div>
+              <div class="reply">回复</div>
+            </div>
+          </div>
+        </div>
+        <div v-if="showReplyInput" class="comment-input">
+          <div class="avatar">
+            <img class="avatar-img" src="public/favicon.ico" alt="1">
+          </div>
+          <CTextarea placeholder="请输入评论" />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scope>
+$left-gap: 16px; // 左侧间距
+
 .top {
   display: flex;
   align-items: center;
   gap: 30px;
+  margin-bottom: 20px;
   .comment-title {
     display: flex;
     align-items: center;
@@ -67,25 +100,49 @@
     }
   }
 }
-.comment-input {
+
+.comment-list {
   display: flex;
-  margin: 20px 0;
-  margin-left: 16px;
-  .input {
-    width: 100%;
+  margin-left: $left-gap;
+  .title {
+    font-size: 1.6rem;
+    line-height: 36px;
+    font-weight: 300;
   }
-  .n-input {
-    min-height: 50px;
-    width: 100%;
+  .reply-title {
+    line-height: 28px;
+  }
+  .content {
+    font-size: 1.8rem;
+  }
+  .info {
+    display: flex;
+    gap: 20px;
+    line-height: 40px;
+    color: getColor(minor-text-color);
   }
 }
+
+// 评论/回复
+.comment-input {
+  display: flex;
+  margin-left: $left-gap;
+  margin-bottom: 30px;
+}
+
+// 所有头像
 .avatar {
   .avatar-img {
+    display: block;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 16px;
     background-color: aqua;
+  }
+  .reply-avatar-img {
+    width: 30px;
+    height: 30px;
   }
 }
 </style>
