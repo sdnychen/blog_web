@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PersonOutline, CalendarOutline, BookOutline } from "@vicons/ionicons5"
+import { PersonOutline, CalendarOutline, BookOutline, ChevronBack, ChevronForward } from "@vicons/ionicons5"
 
 const route = useRoute()
 const article = "<p>aaa</p>"
@@ -36,6 +36,21 @@ const article = "<p>aaa</p>"
       </div>
       <!-- eslint-disable-next-line vue/no-v-html -->
       <article class="article" v-html="article" />
+      <div class="article-recommend">
+        <div class="previous">
+          <n-icon>
+            <ChevronBack />
+          </n-icon>
+          <span>上一篇文章</span>
+        </div>
+        <div class="next">
+          <span>下一篇文章</span>
+          <n-icon>
+            <ChevronForward />
+          </n-icon>
+        </div>
+      </div>
+      <div class="hr" />
       <ClientOnly fallback-tag="span" fallback="加载评论中...">
         <div class="comment">
           <CComment />
@@ -88,6 +103,26 @@ const article = "<p>aaa</p>"
     .n-icon {
       font-size: 1.8rem;
     }
+  }
+  .article-recommend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 60px;
+    font-size: 1.6rem;
+    & > div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .n-icon {
+      position: relative;
+      top: 1px;
+    }
+  }
+  .hr {
+    height: 1px;
+    background-color: getColor(hr-color);
   }
 }
 .aside {

@@ -7,8 +7,14 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    NButton: typeof import('naive-ui')['NButton']
     NCarousel: typeof import('naive-ui')['NCarousel']
+    NCheckbox: typeof import('naive-ui')['NCheckbox']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NForm: typeof import('naive-ui')['NForm']
+    NFormItem: typeof import('naive-ui')['NFormItem']
+    NFormItemGi: typeof import('naive-ui')['NFormItemGi']
+    NGrid: typeof import('naive-ui')['NGrid']
     NIcon: typeof import('naive-ui')['NIcon']
     NIconWrapper: typeof import('naive-ui')['NIconWrapper']
     NInput: typeof import('naive-ui')['NInput']

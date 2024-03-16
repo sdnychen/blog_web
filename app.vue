@@ -1,13 +1,14 @@
 <script lang="ts" setup>
-import { NConfigProvider, type GlobalThemeOverrides } from "naive-ui"
+import { type GlobalThemeOverrides } from "naive-ui"
 
-// Navice UI样式
 const themeOverrides: GlobalThemeOverrides = {
   Input: {
-    borderFocus: "",
-    borderHover: "",
-    boxShadowFocus: "",
-    border: ""
+    countTextColor: "#e88080",
+    borderHover: "1px solid #66CCCC",
+    boxShadowFocus: ""
+  },
+  Checkbox: {
+    colorChecked: "#66CCCC"
   }
 }
 
@@ -15,7 +16,7 @@ const themeOverrides: GlobalThemeOverrides = {
 
 <template>
   <div>
-    <n-config-provider :theme-overrides="themeOverrides">
+    <n-config-provider :theme-overrides="themeOverrides" inline-theme-disabled preflight-style-disabled>
       <NuxtLayout>
         <NuxtLoadingIndicator />
         <NuxtPage />

@@ -1,15 +1,18 @@
 $light: (
   main-color: #66CCCC, // 主色
-  main-text-color: #444, //主文字颜色
   main-gbc: #FFF, // 主背景色
+  minor-bg-color: #e9e9e9, // 次背景色
 
+  main-text-color: #444, //主文字颜色
   minor-text-color: #8f8f8f, // 次要文字颜色
+
+  hr-color: #c5c5c5,
 
   aside-bg-color: #e8ffff, // aside背景颜色
   aside-frame-color: #66CCCC, // aside边框颜色
+
   tag-bg-color: #e8ffff, // tag页顶部介绍的背景色
   tag-frame-color: #66CCCC, // tag页顶部介绍的边框颜色
-
 
   img-shadow-color: #00000054, // 图片阴影
   menu-shadow-color: #0000001e, // 菜单阴影

@@ -60,6 +60,7 @@ const showReplyInput = ref(true)
           </div>
           <CTextarea placeholder="请输入评论" />
         </div>
+        <div class="hr" />
       </div>
     </div>
   </div>
@@ -120,6 +121,10 @@ $left-gap: 16px; // 左侧间距
     gap: 20px;
     line-height: 40px;
     color: getColor(minor-text-color);
+  }
+  .hr {
+    height: 1px;
+    background-color: getColor(hr-color);
   }
 }
 
