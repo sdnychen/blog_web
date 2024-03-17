@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { FormValidationError, FormItemRule } from "naive-ui"
-import { sha256 } from "js-sha256"
+// import { sha256 } from "js-sha256"
 import { ArrowBackCircle } from "@vicons/ionicons5"
 
 // 使用的Layous
@@ -50,7 +50,7 @@ const handleReset = () => {
   resetFormRef.value?.validate((res: Array<FormValidationError>) => {
     if (!res) {
       console.log("11111")
-      console.log(sha256("111"))
+      // console.log(sha256("111"))
     }
   })
 }
@@ -95,9 +95,7 @@ const handleReset = () => {
           <div class="reset-btn" @click="handleReset">重置</div>
           <div class="back">
             <div @click="navigateTo('/login')">
-              <n-icon>
-                <ArrowBackCircle />
-              </n-icon>
+              <n-icon :component="ArrowBackCircle" />
               返回登录
             </div>
           </div>
@@ -171,8 +169,6 @@ const handleReset = () => {
       cursor: pointer;
     }
     .n-icon {
-      position: relative;
-      top: 1px;
       font-size: 2rem;
     }
   }

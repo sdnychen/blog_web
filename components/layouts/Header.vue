@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ChevronDown } from "@vicons/ionicons5"
+import { ChevronDown, CaretDown } from "@vicons/ionicons5"
 
 // 菜单列表(测试用)
 const menu = reactive([
@@ -33,11 +33,17 @@ const menu = reactive([
     title: "关于我",
     url: "/about",
     child: []
+  },
+  {
+    uid: "4",
+    title: "动态",
+    url: "/moments",
+    child: []
   }
 ])
 
 // 是否登录(测试用)
-const hasLogin = ref(false)
+const hasLogin = ref(true)
 
 // 跳转个人中心
 // const gotoPersion = async() => {
@@ -55,9 +61,7 @@ const hasLogin = ref(false)
       <div v-for="menuItem in menu" :key="menuItem.uid" class="menu-item">
         <NuxtLink :to="menuItem.url" class="menu-link" active-class="active">
           {{ menuItem.title }}
-          <n-icon v-if="menuItem.child.length > 0">
-            <ChevronDown />
-          </n-icon>
+          <n-icon v-if="menuItem.child.length > 0" :component="ChevronDown" />
         </NuxtLink>
         <div v-if="menuItem.child.length > 0" class="submenu-box">
           <div v-for="submenuItem in menuItem.child" :key="submenuItem.uid" class="submenu-item">
@@ -67,9 +71,19 @@ const hasLogin = ref(false)
       </div>
     </div>
     <div class="personal">
+      <div class="other" />
       <div v-if="hasLogin" class="info">
         <img class="avatar" src="/favicon.ico" alt="头像" @click="navigateTo('/')">
-        <span>{{ 'sdnychen' }}</span>
+        <span class="username">{{ 'sdnyhen' }}</span>
+        <n-icon :component="CaretDown" />
+        <div class="prision-menu">
+          <div class="prision-menu-item">
+            <span>个人中心</span>
+          </div>
+          <div class="prision-menu-item">
+            <span>退出登录</span>
+          </div>
+        </div>
       </div>
       <div v-else class="login">
         <NuxtLink to="/login">登录</NuxtLink>
@@ -108,7 +122,6 @@ const hasLogin = ref(false)
 
     // 菜单项样式
     .menu-item {
-      cursor: pointer;
       position: relative;
       font-size: 1.8rem;
       &:hover > .submenu-box {
@@ -137,12 +150,12 @@ const hasLogin = ref(false)
       background-color: getColor(main-gbc);
       @include shadowMenu;
       border-radius: 8px;
-      padding: 18px;
+      padding: 18px 0;
       width: 180px;
       z-index: 1;
       .submenu-link {
         display: block;
-        padding: 6px 0;
+        padding: 6px 18px;
         &:hover {
           color: getColor(main-color);
         }
@@ -154,14 +167,50 @@ const hasLogin = ref(false)
   .personal {
     flex: 1;
     text-align: right;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    .other {
+      flex: 1;
+    }
     .info {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 10px;
       font-size: 1.4rem;
+      position: relative;
+      padding: 10px 0;
+      width: auto;
       .avatar {
         border-radius: 50%;
+        margin-right: 10px;
+      }
+      .username {
+        margin-right: 4px;
+      }
+      &:hover .prision-menu {
+        display: block;
+      }
+    }
+    .prision-menu {
+      display: none;
+      position: absolute;
+      top: 46px;
+      right: -20px;
+      font-size: 1.6rem;
+      background-color: getColor(main-gbc);
+      @include shadowMenu;
+      border-radius: 8px;
+      padding: 10px 0;
+      z-index: 1;
+      .prision-menu-item {
+        text-align: center;
+        cursor: pointer;
+        width: 100px;
+        padding: 6px 18px;
+        &:hover {
+          color: getColor(main-color);
+        }
       }
     }
   }

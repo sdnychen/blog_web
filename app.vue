@@ -16,7 +16,7 @@ const themeOverrides: GlobalThemeOverrides = {
 
 <template>
   <div>
-    <n-config-provider :theme-overrides="themeOverrides" inline-theme-disabled preflight-style-disabled>
+    <n-config-provider :theme-overrides="themeOverrides" preflight-style-disabled>
       <NuxtLayout>
         <NuxtLoadingIndicator />
         <NuxtPage />

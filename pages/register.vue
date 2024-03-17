@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { FormValidationError, FormItemRule } from "naive-ui"
-import { sha256 } from "js-sha256"
+// import { sha256 } from "js-sha256"
 import { ArrowBackCircle } from "@vicons/ionicons5"
 
 // 使用的Layous
@@ -53,7 +53,7 @@ const handleRegister = () => {
   registerFormRef.value?.validate((res: Array<FormValidationError>) => {
     if (!res) {
       console.log("11111")
-      console.log(sha256("111"))
+      // console.log(sha256("111"))
     }
   })
 }
@@ -101,9 +101,7 @@ const handleRegister = () => {
           <div class="register-btn" @click="handleRegister">注册</div>
           <div class="back">
             <div @click="navigateTo('/login')">
-              <n-icon>
-                <ArrowBackCircle />
-              </n-icon>
+              <n-icon :component="ArrowBackCircle" />
               返回登录
             </div>
           </div>
@@ -177,8 +175,6 @@ const handleRegister = () => {
       cursor: pointer;
     }
     .n-icon {
-      position: relative;
-      top: 1px;
       font-size: 2rem;
     }
   }

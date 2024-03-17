@@ -73,9 +73,7 @@ const handleLogin = () => {
           <div class="login-btn" @click="handleLogin">登录</div>
           <div class="back-register">
             <div @click="navigateTo('/')">
-              <n-icon>
-                <ArrowBackCircle />
-              </n-icon>
+              <n-icon :component="ArrowBackCircle" />
               返回首页
             </div>
             <div @click="navigateTo('/register')">还没账号？去注册一个</div>
@@ -160,8 +158,6 @@ const handleLogin = () => {
       cursor: pointer;
     }
     .n-icon {
-      position: relative;
-      top: 1px;
       font-size: 2rem;
     }
   }

@@ -10,15 +10,11 @@ import { CalendarOutline, PersonOutline, BookOutline } from "@vicons/ionicons5"
     <div class="title">{{ '这是一个很随意的标题' }}</div>
     <div class="basic-info">
       <div class="auther">
-        <n-icon>
-          <PersonOutline />
-        </n-icon>
+        <n-icon :component="PersonOutline" />
         <span class="text">{{ "SDNYCHEN" }}</span>
       </div>
       <div class="date">
-        <n-icon>
-          <CalendarOutline />
-        </n-icon>
+        <n-icon :component="CalendarOutline" />
         <span class="text">{{ "2024/03/11" }}</span>
       </div>
     </div>
@@ -30,9 +26,7 @@ import { CalendarOutline, PersonOutline, BookOutline } from "@vicons/ionicons5"
         Read More
       </div>
       <div class="read-time">
-        <n-icon>
-          <BookOutline />
-        </n-icon>
+        <n-icon :component="BookOutline" />
         <span>预计阅读{{ 2 }}分钟</span>
       </div>
     </div>
@@ -99,8 +93,6 @@ import { CalendarOutline, PersonOutline, BookOutline } from "@vicons/ionicons5"
     gap: 6px;
     color: getColor(minor-text-color);
     .n-icon {
-      position: relative;
-      top: 1px;
       font-size: 2rem;
     }
   }

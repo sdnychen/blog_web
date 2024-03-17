@@ -94,10 +94,10 @@ const handleChangeDot = (index: number) => {
     </div>
     <div v-if="showArrow" class="arrows">
       <div class="arrow" @click="handleChangeArrow('previous')">
-        <ChevronBack />
+        <n-icon :component="ChevronBack" />
       </div>
       <div class="arrow" @click="handleChangeArrow('next')">
-        <ChevronForward />
+        <n-icon :component="ChevronForward" />
       </div>
     </div>
     <div v-if="showDots" class="dots">

@@ -4,7 +4,7 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
 </script>
 
 <template>
-  <div class="aside">
+  <div class="aside-box">
     <div class="author">
       <div class="avatar">
         <img class="avatar-img" src="/favicon.ico" alt="头像">
@@ -40,9 +40,7 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
               基于Python的Nginx的日志管理分析系统的设计与实现
             </div>
             <div class="time">
-              <n-icon>
-                <TimeOutline />
-              </n-icon>
+              <n-icon :component="TimeOutline" />
               <span>2小时前</span>
             </div>
           </div>
@@ -56,9 +54,7 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
               文章标题2
             </div>
             <div class="time">
-              <n-icon>
-                <TimeOutline />
-              </n-icon>
+              <n-icon :component="TimeOutline" />
               <span>2小时前</span>
             </div>
           </div>
@@ -72,9 +68,7 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
               文章标题1
             </div>
             <div class="time">
-              <n-icon>
-                <TimeOutline />
-              </n-icon>
+              <n-icon :component="TimeOutline" />
               <span>2小时前</span>
             </div>
           </div>
@@ -92,15 +86,11 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
           </div>
           <div class="info">
             <div class="info-item">
-              <n-icon>
-                <HeartOutline />
-              </n-icon>
+              <n-icon :component="HeartOutline" />
               <span>0</span>
             </div>
             <div class="info-item">
-              <n-icon>
-                <ChatboxEllipsesOutline />
-              </n-icon>
+              <n-icon :component="ChatboxEllipsesOutline" />
               <span>0</span>
             </div>
           </div>
@@ -111,15 +101,11 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
           </div>
           <div class="info">
             <div class="info-item">
-              <n-icon>
-                <HeartOutline />
-              </n-icon>
+              <n-icon :component="HeartOutline" />
               <span>0</span>
             </div>
             <div class="info-item">
-              <n-icon>
-                <ChatboxEllipsesOutline />
-              </n-icon>
+              <n-icon :component="ChatboxEllipsesOutline" />
               <span>0</span>
             </div>
           </div>
@@ -133,7 +119,7 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
 </template>
 
 <style lang="scss" scoped>
-.aside {
+.aside-box {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -199,8 +185,6 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
     display: flex;
     align-items: center;
     .n-icon {
-      position: relative;
-      top: 1px;
       margin-right: 4px;
       font-size: 2rem;
     }

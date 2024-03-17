@@ -16,21 +16,15 @@ const article = "<p>aaa</p>"
       </div>
       <div class="info">
         <div class="auther">
-          <n-icon>
-            <PersonOutline />
-          </n-icon>
+          <n-icon :component="PersonOutline" />
           <span class="text">{{ "SDNYCHEN" }}</span>
         </div>
         <div class="date">
-          <n-icon>
-            <CalendarOutline />
-          </n-icon>
+          <n-icon :component="CalendarOutline" />
           <span class="text">{{ "2024/03/11" }}</span>
         </div>
         <div class="read-time">
-          <n-icon>
-            <BookOutline />
-          </n-icon>
+          <n-icon :component="BookOutline" />
           <span>预计阅读{{ 2 }}分钟</span>
         </div>
       </div>
@@ -38,22 +32,18 @@ const article = "<p>aaa</p>"
       <article class="article" v-html="article" />
       <div class="article-recommend">
         <div class="previous">
-          <n-icon>
-            <ChevronBack />
-          </n-icon>
+          <n-icon :component="ChevronBack" />
           <span>上一篇文章</span>
         </div>
         <div class="next">
           <span>下一篇文章</span>
-          <n-icon>
-            <ChevronForward />
-          </n-icon>
+          <n-icon :component="ChevronForward" />
         </div>
       </div>
       <div class="hr" />
       <ClientOnly fallback-tag="span" fallback="加载评论中...">
         <div class="comment">
-          <!-- <CComment /> -->
+          <CComment />
         </div>
       </ClientOnly>
     </main>
@@ -114,10 +104,6 @@ const article = "<p>aaa</p>"
       display: flex;
       align-items: center;
       gap: 10px;
-    }
-    .n-icon {
-      position: relative;
-      top: 1px;
     }
   }
   .hr {
