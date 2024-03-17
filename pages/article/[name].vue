@@ -108,6 +108,7 @@ const article = "<p>aaa</p>"
   }
   .hr {
     height: 1px;
+    margin-bottom: 20px;
     background-color: getColor(hr-color);
   }
 }

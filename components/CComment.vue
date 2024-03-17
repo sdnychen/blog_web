@@ -1,11 +1,22 @@
 <script lang="ts" setup>
+defineProps({
+  showTop: {
+    type: Boolean,
+    default: true
+  },
+  showAvatar: {
+    type: Boolean,
+    default: true
+  }
+})
+
 const showReplyInput = ref(true)
 
 </script>
 
 <template>
   <div>
-    <div class="top">
+    <div v-if="showTop" class="top">
       <div class="comment-title">
         <span class="text">评论</span>
         <span class="num">{{ 21 }}</span>
@@ -17,14 +28,14 @@ const showReplyInput = ref(true)
       </div>
     </div>
     <div class="comment-input">
-      <div class="avatar">
-        <img class="avatar-img" src="favicon.ico" alt="1">
+      <div class="comment-avatar">
+        <img class="avatar-img" src="/favicon.ico" alt="1">
       </div>
       <CTextarea placeholder="请输入评论" />
     </div>
     <div class="comment-list">
-      <div class="avatar">
-        <img class="avatar-img" src="favicon.ico" alt="1">
+      <div class="comment-avatar">
+        <img class="avatar-img" src="/favicon.ico" alt="1">
       </div>
       <div class="right">
         <div class="title">
@@ -38,8 +49,8 @@ const showReplyInput = ref(true)
           <div class="reply">回复</div>
         </div>
         <div class="comment-list reply-list">
-          <div class="avatar">
-            <img class="avatar-img reply-avatar-img" src="favicon.ico" alt="1">
+          <div class="comment-avatar">
+            <img class="avatar-img reply-avatar-img" src="/favicon.ico" alt="1">
           </div>
           <div class="right">
             <div class="title reply-title">
@@ -55,8 +66,8 @@ const showReplyInput = ref(true)
           </div>
         </div>
         <div v-if="showReplyInput" class="comment-input">
-          <div class="avatar">
-            <img class="avatar-img" src="favicon.ico" alt="1">
+          <div class="comment-avatar">
+            <img class="avatar-img" src="/favicon.ico" alt="1">
           </div>
           <CTextarea placeholder="请输入评论" />
         </div>
@@ -120,6 +131,7 @@ $left-gap: 16px; // 左侧间距
     display: flex;
     gap: 20px;
     line-height: 40px;
+    font-size: 1.4rem;
     color: getColor(minor-text-color);
   }
   .hr {
@@ -136,7 +148,7 @@ $left-gap: 16px; // 左侧间距
 }
 
 // 所有头像
-.avatar {
+.comment-avatar {
   .avatar-img {
     display: block;
     width: 50px;
