@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ChevronDown, CaretDown } from "@vicons/ionicons5"
+import { ChevronDown, CaretDown, Search } from "@vicons/ionicons5"
 
 // 菜单列表(测试用)
 const menu = reactive([
@@ -50,6 +50,13 @@ const hasLogin = ref(true)
 //   await navigateTo("/")
 // }
 
+// 搜索模态框
+const showSearchModal = ref(false)
+const searchContent = ref("")
+const handleSearch = () => {
+  showSearchModal.value = false
+}
+
 </script>
 
 <template>
@@ -68,6 +75,25 @@ const hasLogin = ref(true)
             <NuxtLink :to="submenuItem.url" class="submenu-link" active-class="sub-active">{{ submenuItem.title }}</NuxtLink>
           </div>
         </div>
+      </div>
+      <!-- 搜索 -->
+      <div class="menu-item search-btn">
+        <div class="menu-link" @click="showSearchModal = true">
+          <n-icon :component="Search" />
+        </div>
+        <n-modal v-model:show="showSearchModal">
+          <div class="search-modal">
+            <n-icon :component="Search" />
+            <input
+              v-model="searchContent"
+              class="search-input"
+              type="text"
+              maxlength="50"
+              placeholder="搜索内容"
+              @keydown.enter="handleSearch"
+            >
+          </div>
+        </n-modal>
       </div>
     </div>
     <div class="personal">
@@ -133,8 +159,9 @@ const hasLogin = ref(true)
       padding: 1rem 1.6rem;
       display: flex;
       align-items: center;
+      cursor: pointer;
       .n-icon {
-        font-size: 20px;
+        font-size: 2rem;
       }
       &:hover {
         color: getColor(main-color);
@@ -212,6 +239,20 @@ const hasLogin = ref(true)
           color: getColor(main-color);
         }
       }
+    }
+  }
+  .search-modal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 40px;
+    border-radius: 16px;
+    background-color: getColor(main-gbc);
+    font-size: 2.2rem;
+    position: relative;
+    top: -300px;
+    .search-input {
+      font-size: 1.8rem;
     }
   }
 </style>

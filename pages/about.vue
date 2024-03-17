@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-const article = "<p>aaa</p>"
+const article = "<p>加载评论中</p>"
 </script>
 
 <template>
