@@ -26,7 +26,7 @@ const registerForm: RegisterForm = reactive({
   verification: ""
 })
 const rules = reactive({
-  account: { required: true, message: "请输入账户", trigger: "blur" },
+  account: { required: true, message: "请输入用户名", trigger: "blur" },
   email: { required: true, message: "请输入邮箱", trigger: "blur" },
   emailVerification: { required: true, message: "请输入邮箱验证码", trigger: "blur" },
   password: { required: true, message: "请输入密码", trigger: "blur" },
@@ -35,7 +35,7 @@ const rules = reactive({
     {
       required: true,
       validator(rule: FormItemRule, value: string) {
-        console.log(rule)
+        console.log(rule) // TODO
         if (value === registerForm.password) {
           return true
         }
@@ -118,7 +118,7 @@ const handleRegister = () => {
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-image: url(assets//temp/boat-8614314_1280.jpg);
+  background-image: url(/assets/temp/boat-8614314_1280.jpg);
   background-size: cover;
   background-position: center;
 }

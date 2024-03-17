@@ -18,13 +18,13 @@ const showReplyInput = ref(true)
     </div>
     <div class="comment-input">
       <div class="avatar">
-        <img class="avatar-img" src="public/favicon.ico" alt="1">
+        <img class="avatar-img" src="favicon.ico" alt="1">
       </div>
       <CTextarea placeholder="请输入评论" />
     </div>
     <div class="comment-list">
       <div class="avatar">
-        <img class="avatar-img" src="public/favicon.ico" alt="1">
+        <img class="avatar-img" src="favicon.ico" alt="1">
       </div>
       <div class="right">
         <div class="title">
@@ -39,7 +39,7 @@ const showReplyInput = ref(true)
         </div>
         <div class="comment-list reply-list">
           <div class="avatar">
-            <img class="avatar-img reply-avatar-img" src="public/favicon.ico" alt="1">
+            <img class="avatar-img reply-avatar-img" src="favicon.ico" alt="1">
           </div>
           <div class="right">
             <div class="title reply-title">
@@ -56,7 +56,7 @@ const showReplyInput = ref(true)
         </div>
         <div v-if="showReplyInput" class="comment-input">
           <div class="avatar">
-            <img class="avatar-img" src="public/favicon.ico" alt="1">
+            <img class="avatar-img" src="favicon.ico" alt="1">
           </div>
           <CTextarea placeholder="请输入评论" />
         </div>

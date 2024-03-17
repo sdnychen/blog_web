@@ -7,7 +7,7 @@ import { TimeOutline, HeartOutline, ChatboxEllipsesOutline } from "@vicons/ionic
   <div class="aside">
     <div class="author">
       <div class="avatar">
-        <img class="avatar-img" src="/public/favicon.ico" alt="头像">
+        <img class="avatar-img" src="/favicon.ico" alt="头像">
       </div>
       <div class="name">
         SDNYCHEN

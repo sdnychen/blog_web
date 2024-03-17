@@ -73,9 +73,7 @@ const postDataList: PostType[] = reactive([
         <CWideCard :data="postDataList" />
       </main>
       <aside class="aside">
-        <div class="about">
-          <CAside />
-        </div>
+        <CAside />
       </aside>
     </div>
   </div>

@@ -37,12 +37,12 @@ const menu = reactive([
 ])
 
 // 是否登录(测试用)
-const hasLogin = ref(true)
+const hasLogin = ref(false)
 
 // 跳转个人中心
-const gotoPersion = async() => {
-  await navigateTo("/")
-}
+// const gotoPersion = async() => {
+//   await navigateTo("/")
+// }
 
 </script>
 
@@ -68,7 +68,7 @@ const gotoPersion = async() => {
     </div>
     <div class="personal">
       <div v-if="hasLogin" class="info">
-        <img class="avatar" src="/favicon.ico" alt="头像" @click="gotoPersion">
+        <img class="avatar" src="/favicon.ico" alt="头像" @click="navigateTo('/')">
         <span>{{ 'sdnychen' }}</span>
       </div>
       <div v-else class="login">

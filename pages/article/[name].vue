@@ -53,7 +53,7 @@ const article = "<p>aaa</p>"
       <div class="hr" />
       <ClientOnly fallback-tag="span" fallback="加载评论中...">
         <div class="comment">
-          <CComment />
+          <!-- <CComment /> -->
         </div>
       </ClientOnly>
     </main>

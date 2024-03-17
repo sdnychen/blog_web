@@ -112,7 +112,7 @@ const handleReset = () => {
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-image: url(assets//temp/boat-8614314_1280.jpg);
+  background-image: url(/assets/temp/boat-8614314_1280.jpg);
   background-size: cover;
   background-position: center;
 }
