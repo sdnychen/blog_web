@@ -3,18 +3,20 @@
 
 
 :root {
-  @each $key, $val in $light {
-    --color-#{$key}: #{$val};
-  }
+    @each $key, $val in $light {
+        --color-#{$key}: #{$val};
+    }
 }
 
 html[data-theme="dark"] {
-  @each $key, $val in $dark {
-    --color-#{$key}: #{$val};
-  }
+    @each $key, $val in $dark {
+        --color-#{$key}: #{$val};
+    }
 }
 
 
 @function getColor($color) {
-  @return var(--color-#{$color});
-};
+    @return var(--color-#{$color});
+}
+
+;
