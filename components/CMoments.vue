@@ -43,7 +43,7 @@
     </div>
 </template>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .moments-box {
     .issuer {
         display: flex;

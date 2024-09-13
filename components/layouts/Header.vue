@@ -1,45 +1,52 @@
 <script lang="ts" setup>
 import { ChevronDown, Search } from "@vicons/ionicons5"
 
-// 菜单列表(测试用)
-const menu = reactive([
+type menuType = {
+    uid: string,
+    title: string,
+    url: string,
+    child: menuType[]
+}
+
+// 菜单列表(临时用)
+const menu = reactive<menuType[]>([
     {
         uid: "1",
         title: "首页",
         url: "/",
         child: []
     },
-    {
-        uid: "2",
-        title: "笔记",
-        url: "",
-        child: [
-            {
-                uid: "2-1",
-                title: "笔记子菜单1",
-                url: "/",
-                child: []
-            },
-            {
-                uid: "2-2",
-                title: "笔记子菜单2",
-                url: "/",
-                child: []
-            }
-        ]
-    },
+    // {
+    //     uid: "2",
+    //     title: "笔记",
+    //     url: "",
+    //     child: [
+    //         {
+    //             uid: "2-1",
+    //             title: "笔记子菜单1",
+    //             url: "/",
+    //             child: []
+    //         },
+    //         {
+    //             uid: "2-2",
+    //             title: "笔记子菜单2",
+    //             url: "/",
+    //             child: []
+    //         }
+    //     ]
+    // },
     {
         uid: "3",
         title: "关于我",
         url: "/about",
         child: []
-    },
-    {
-        uid: "4",
-        title: "动态",
-        url: "/moments",
-        child: []
     }
+    // {
+    //     uid: "4",
+    //     title: "动态",
+    //     url: "/moments",
+    //     child: []
+    // }
 ])
 
 // 是否登录(测试用)
@@ -61,9 +68,9 @@ const handleSearch = () => {
 
 <template>
     <div class="header">
-        <div class="logo">
-            logo
-        </div>
+        <NuxtLink to="/" class="logo">
+            CJBLOG
+        </NuxtLink>
         <div class="menu">
             <div v-for="menuItem in menu" :key="menuItem.uid" class="menu-item">
                 <NuxtLink :to="menuItem.url" class="menu-link" active-class="active">
@@ -98,11 +105,11 @@ const handleSearch = () => {
                 <img class="avatar" src="/favicon.ico" alt="头像" @click="navigateTo('/')">
                 <span class="username">{{ 'sdnyhen' }}</span>
                 <n-icon :component="CaretDown" />
-                <div class="prision-menu">
-                    <div class="prision-menu-item">
+                <div class="person-menu">
+                    <div class="person-menu-item">
                         <span>个人中心</span>
                     </div>
-                    <div class="prision-menu-item">
+                    <div class="person-menu-item">
                         <span>退出登录</span>
                     </div>
                 </div>
@@ -222,12 +229,12 @@ const handleSearch = () => {
             margin-right: 4px;
         }
 
-        &:hover .prision-menu {
+        &:hover .person-menu {
             display: block;
         }
     }
 
-    .prision-menu {
+    .person-menu {
         display: none;
         position: absolute;
         top: 46px;
@@ -239,7 +246,7 @@ const handleSearch = () => {
         padding: 10px 0;
         z-index: 1;
 
-        .prision-menu-item {
+        .person-menu-item {
             text-align: center;
             cursor: pointer;
             width: 100px;

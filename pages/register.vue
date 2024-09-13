@@ -3,7 +3,7 @@ import type { FormValidationError, FormItemRule } from "naive-ui"
 // import { sha256 } from "js-sha256"
 import { ArrowBackCircle } from "@vicons/ionicons5"
 
-// 使用的Layous
+// 使用的Layouts
 definePageMeta({
     layout: "login-register"
 })
@@ -108,7 +108,7 @@ const handleRegister = () => {
     </div>
 </template>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .page {
     display: flex;
     width: 100vw;

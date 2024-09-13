@@ -1,5 +1,15 @@
 <script lang="ts" setup>
 
+// 轮播图数据类型
+type CarouselType = {
+  uid: string,
+  title: string,
+  src: string,
+  url: string,
+  alt: string,
+  type: number
+}
+
 // 轮播图数据
 const carouselList: CarouselType[] = reactive([
     {

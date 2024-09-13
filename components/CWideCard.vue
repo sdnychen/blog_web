@@ -20,7 +20,7 @@ defineProps({
         <div class="info">
             <div class="title">{{ 'item.title' }}</div>
             <div class="basic-info">
-                <div class="auther">
+                <div class="author">
                     <n-icon :component="PersonOutline" />
                     <span class="text">{{ "SDNYCHEN" }}</span>
                 </div>
@@ -99,7 +99,7 @@ defineProps({
             font-size: 1.8rem;
         }
 
-        // .auther .text {
+        // .author .text {
         //   cursor: pointer;
         //   color: getColor(main-color);
         // }

@@ -10,7 +10,7 @@ import { CalendarOutline, PersonOutline, BookOutline } from "@vicons/ionicons5"
         </div>
         <div class="title">{{ '这是一个很随意的标题' }}</div>
         <div class="basic-info">
-            <div class="auther">
+            <div class="author">
                 <n-icon :component="PersonOutline" />
                 <span class="text">{{ "SDNYCHEN" }}</span>
             </div>
@@ -34,7 +34,7 @@ import { CalendarOutline, PersonOutline, BookOutline } from "@vicons/ionicons5"
     </div>
 </template>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .card {
     display: flex;
     flex-direction: column;
@@ -72,7 +72,7 @@ import { CalendarOutline, PersonOutline, BookOutline } from "@vicons/ionicons5"
         font-size: 1.8rem;
     }
 
-    // .auther .text {
+    // .author .text {
     //   cursor: pointer;
     //   color: getColor(main-color);
     // }

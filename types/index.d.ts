@@ -1,12 +1,4 @@
-// 轮播图数据类型
-interface CarouselType {
-  uid: string,
-  title: string,
-  src: string,
-  url: string,
-  alt: string,
-  type: number
-}
+/* eslint-disable no-unused-vars */
 
 // 文章数据类型
 interface PostType {

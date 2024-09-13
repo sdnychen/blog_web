@@ -77,7 +77,7 @@ const showReplyInput = ref(true)
     </div>
 </template>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 $left-gap: 16px; // 左侧间距
 
 .top {

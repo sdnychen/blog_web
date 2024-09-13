@@ -41,7 +41,7 @@ watch(textareaContent, () => {
     </div>
 </template>
 
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .input {
     display: flex;
     align-items: center;
